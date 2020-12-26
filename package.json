@@ -1,0 +1,26 @@
+{
+  "name": "com.example.new",
+  "version": "1.0.0",
+  "description": "desktop app to manage personal details",
+  "main": "manage",
+  "scripts": {
+    "start:electron": "electron ./manage.js",
+    "package-win": "electron-packager . managee --overwrite --asar --platform=win32 --arch=ia32 --icon=assets/icons/managee.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"managee\"",
+    "create-installer-win": "node installers/windows/createinstaller.js"
+  },
+  "author": "rohitashwa kumar",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^11.1.0",
+    "electron-packager": "^12.2.0",
+    "electron-winstaller": "^2.7.0"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "fullcalendar": "^5.4.0",
+    "jquery": "^3.5.1"
+  },
+  "build": {
+    "extraResources": ["./extraResources/**"]
+    }
+}
